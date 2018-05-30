@@ -19,11 +19,10 @@ def welcome():
 
 
 @app.route("/scrape")
-def scrape():
-    use mars_db
+def web_scraper():
     scrape_mars.scrape();
-    db.mars_db.insert(scraped_dict)
-    return jsonify(scraped_dict)
+    db.mars_db.insert(scrape_mars.scrape())
+    return jsonify(scrape_mars.scrape())
 
 
 if __name__ == '__main__':
